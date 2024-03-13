@@ -21,16 +21,19 @@ const blogs = [
 export default function Blog() {
   return (
     <div>
-      <ul>
+      <div>
         {
             blogs?.map((blog)=> (
-                <li key={blog.id}>
+               <ul key={blog.id}>
+                 <li>
                     <Link href={`/blogs/${blog.id}`}>{blog.title}</Link>
                 </li>
+                <li>{blog.description}</li>
+               </ul>
                 
             ))
         }
-      </ul>
+      </div>
     </div>
   );
 }
